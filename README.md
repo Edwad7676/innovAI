@@ -2,7 +2,7 @@
 ## React Web using AI Engine
  innovAI is a personal project interactive website created using react and node.js, powered by AI Engine [Clarifai](https://www.clarifai.com/)  
 # setting up
-## database
+## login database
  ```sh
   create table users(
   id serial NOT NULL,
