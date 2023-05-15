@@ -19,7 +19,7 @@
  server.js:
  ```sh
  host = localhost
- port = your port
+ port = port
  user= "your user"
  password = "your password"
  database="your database"
@@ -44,5 +44,6 @@ change token in server.js:
 ```sh
 const token = "your token"
 ```
- 
+ ##dependencies
+ all dependencies in json files 
 
