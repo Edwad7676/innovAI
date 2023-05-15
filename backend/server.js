@@ -9,10 +9,10 @@ const knex = require('knex')({
     client: 'pg',
     connection: {
         host: '127.0.0.1',
-        port: 5432,
-        user: 'user',
-        password: 'password',
-        database: 'database'
+        port: port,
+        user: 'your user',
+        password: 'your password',
+        database: 'your database'
     }
 });
 
@@ -23,10 +23,11 @@ const saltRounds = 10;
 
 // URL of image. Change this to your image. Clarifai
 let IMAGE_URL = "";
+const token = "your token";
 const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 const stub = ClarifaiStub.grpc();
 const metadata = new grpc.Metadata();
-metadata.set("authorization", "Key " + "c133d7ffb1514e25bd87e69094deb4c8");
+metadata.set("authorization", "Key " + token);
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
