@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "\\my-app",
+    "\\my-app\\src",
+    "\\my-app\\src\\component",
+    "\\my-app\\src\\component\\imagelinkform",
+    "\\my-app\\src\\component\\register",
+    "\\my-app\\src\\component\\signin",
+    "\\my-app\\src\\pages"
+  ],
+  "PreviewInSolutionExplorer": false
+}
