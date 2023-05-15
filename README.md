@@ -32,18 +32,18 @@ in frontend/my-app:
  ```
  
  ##  backend
+ in backend:
  ```sh
-in backend:
  npm start
 ```
 
-#about clarifai
+# about clarifai
 this project using [face-detection model](https://clarifai.com/clarifai/main/models/face-detection)
 
 change token in server.js:
 ```sh
 const token = "your token"
 ```
- ##dependencies
+ # dependencies
  all dependencies in json files 
 
