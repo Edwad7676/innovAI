@@ -1,5 +1,5 @@
 # innovAI
- React Web using AI Engine Clarifai to detect face
+ React Web project using AI Engine Clarifai to detect face
  
  Setting up database using pgadmin:
   create table users(
