@@ -1,6 +1,6 @@
 # innovAI
-## personal React Web project using AI Engine Clarifai to detect face
- innovAI is a interactive website created using react and node.js, powered by AI Engine [Clarifai](https://www.clarifai.com/)  
+## React Web using AI Engine
+ innovAI is a personal project interactive website created using react and node.js, powered by AI Engine [Clarifai](https://www.clarifai.com/)  
 # setting up
 ## database
  ```sh
