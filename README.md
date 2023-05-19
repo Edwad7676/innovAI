@@ -13,6 +13,24 @@ once you have register and login you can insert picture url to detect faces
 
 
 # setting up
+
+ # dependencies
+ all dependencies in json files (backend and front end json is seperated).
+ to install dependencies install:
+ ```sh
+ npm install
+ ```
+ 
+# about clarifai
+clarifai is an Ai Engine which you can choose many Ai model to use.
+this project using [face-detection model](https://clarifai.com/clarifai/main/models/face-detection)
+to get new token -> click the link above then use model>call by API>create a new token
+
+change token in server.js:
+```sh
+const token = "your token"
+```
+
 ## database setup
  ```sh
   create table users(
@@ -35,33 +53,17 @@ once you have register and login you can insert picture url to detect faces
  password = "your password"
  database="your database"
  ```
- # to run
- do the following steps in order
- 
- ##  backend
+ ## to run
+ run backend then frontend in order
+ #  backend
  in backend:
  ```sh
  npm start
 ```
- 
- ## frontend
+ # frontend
 in frontend/my-app:
 ```sh
  npm start
  ```
  
-# about clarifai
-clarifai is an Ai Engine which you can choose many Ai model to use.
-this project using [face-detection model](https://clarifai.com/clarifai/main/models/face-detection)
-to get new token -> click the link above then use model>call by API>create a new token
 
-change token in server.js:
-```sh
-const token = "your token"
-```
- # dependencies
- all dependencies in json files (backend and front end json is seperated).
- to install dependencies install:
- ```sh
- npm install
- ```
