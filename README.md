@@ -1,6 +1,6 @@
 # innovAI
 ## React Web using AI Engine
-Welcome to my personal project portofolio
+Welcome to my personal project portofolio.
 innovAI is a interactive website created using react and node.js, powered by AI Engine [Clarifai](https://www.clarifai.com/) 
 # Created by
 -React js(front end)
