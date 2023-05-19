@@ -62,4 +62,4 @@ const token = "your token"
  to install dependencies install:
  ```sh
  npm install
- ```sh
+ ```
