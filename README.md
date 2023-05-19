@@ -1,8 +1,17 @@
 # innovAI
 ## React Web using AI Engine
- innovAI is a personal project interactive website created using react and node.js, powered by AI Engine [Clarifai](https://www.clarifai.com/)  
+Welcome to my personal project portofolio
+innovAI is a interactive website created using react and node.js, powered by AI Engine [Clarifai](https://www.clarifai.com/) 
+# Created by
+-React js(front end)
+-Node js(back end)
+-PostgreSQL(login system)
+
+# Usage
+once you have register and login you can insert picture url to detect faces
+
 # setting up
-## login database
+## database setup
  ```sh
   create table users(
   id serial NOT NULL,
@@ -24,6 +33,14 @@
  password = "your password"
  database="your database"
  ```
+ # to run
+ do the following steps in order
+ 
+ ##  backend
+ in backend:
+ ```sh
+ npm start
+```
  
  ## frontend
 in frontend/my-app:
@@ -31,19 +48,18 @@ in frontend/my-app:
  npm start
  ```
  
- ##  backend
- in backend:
- ```sh
- npm start
-```
-
 # about clarifai
+clarifai is an Ai Engine which you can choose many Ai model to use.
 this project using [face-detection model](https://clarifai.com/clarifai/main/models/face-detection)
+to get new token -> click the link above then use model>call by API>create a new token
 
 change token in server.js:
 ```sh
 const token = "your token"
 ```
  # dependencies
- all dependencies in json files 
-
+ all dependencies in json files (backend and front end json is seperated).
+ to install dependencies install:
+ ```sh
+ npm install
+ ```sh
