@@ -9,6 +9,7 @@ innovAI is a interactive website created using react and node.js, powered by AI 
 
 # Usage
 once you have register and login you can insert picture url to detect faces
+![plot](./detect_faces.PNG)
 
 # setting up
 ## database setup
