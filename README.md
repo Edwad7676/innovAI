@@ -3,9 +3,9 @@
 Welcome to my personal project portofolio.
 innovAI is a interactive website created using react and node.js, powered by AI Engine [Clarifai](https://www.clarifai.com/) 
 # Created by
--React js(front end)
--Node js(back end)
--PostgreSQL(login system)
+- React js(front end)
+- Node js(back end)
+- PostgreSQL(login system)
 
 # Usage
 once you have register and login you can insert picture url to detect faces
