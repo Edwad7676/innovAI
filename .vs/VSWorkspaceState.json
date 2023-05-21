@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\frontend",
+    "\\frontend\\my-app",
+    "\\frontend\\my-app\\src",
+    "\\frontend\\my-app\\src\\component",
+    "\\frontend\\my-app\\src\\component\\count",
+    "\\frontend\\my-app\\src\\component\\facerecognition",
+    "\\frontend\\my-app\\src\\component\\Navigation",
+    "\\frontend\\my-app\\src\\component\\register",
+    "\\frontend\\my-app\\src\\component\\signin"
   ],
+  "SelectedNode": "\\frontend\\my-app\\src\\component\\facerecognition\\facerecognition.js",
   "PreviewInSolutionExplorer": false
 }

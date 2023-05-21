@@ -11,9 +11,9 @@ const knex = require('knex')({
     connection: {
         host: '127.0.0.1',
         port: 5432,
-        user: 'postgres',
-        password: '12345678',
-        database: 'postgres'
+        user: 'user',
+        password: 'password',
+        database: 'database'
     }
 });
 
@@ -34,7 +34,7 @@ const saltRounds = 10;
 
 // URL of image. Change this to your image. Clarifai
 let IMAGE_URL = "";
-const token = "c133d7ffb1514e25bd87e69094deb4c8";
+const token = "token";
 const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 const stub = ClarifaiStub.grpc();
 const metadata = new grpc.Metadata();
