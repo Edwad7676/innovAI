@@ -4,17 +4,28 @@ const cors = require('cors');
 
 const app = express();
 
-//database
+//database - you can use PGadmin to connect to database
+let app_mode = "database";
 const knex = require('knex')({
     client: 'pg',
     connection: {
         host: '127.0.0.1',
-        port: "port",
-        user: 'user',
-        password: 'password',
-        database: 'database'
+        port: 5432,
+        user: 'postgres',
+        password: '12345678',
+        database: 'postgres'
     }
 });
+
+knex.raw('SELECT 1').then(() => {
+    console.log('Database connected')
+
+}).catch((e) => {
+    console.log('Database not connected')
+    app_mode = "No database"
+    console.log(app_mode)
+    
+})
 
 //bcrypt
 const bcrypt = require('bcrypt');
@@ -23,7 +34,7 @@ const saltRounds = 10;
 
 // URL of image. Change this to your image. Clarifai
 let IMAGE_URL = "";
-const token = "your token";
+const token = "c133d7ffb1514e25bd87e69094deb4c8";
 const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
 const stub = ClarifaiStub.grpc();
 const metadata = new grpc.Metadata();
@@ -40,45 +51,54 @@ app.get('/', (req, res) => {
 })
 
 app.post('/signin', (req, res) => {
-
-    knex.select('*').from('login').where('email', req.body.email).then(user => {
-        let comparevar = " "
-        try {
-            comparevar = user[0].hash
-        } catch {
-            console.log("not found")
-        }
-
-        bcrypt.compare(req.body.password, comparevar, function (err, result) {
-            if (result === true) {
-                res.json("accepted");
-            } else {
-                res.json("wrong email or password")
+    if (app_mode === "database") {
+        knex.select('*').from('login').where('email', req.body.email).then(user => {
+            let comparevar = " "
+            try {
+                comparevar = user[0].hash
+            } catch {
+                console.log("not found")
             }
-        });
-    })
+
+            bcrypt.compare(req.body.password, comparevar, function (err, result) {
+                if (result === true) {
+                    res.json("accepted");
+                } else {
+                    res.json("wrong email or password")
+                }
+            });
+        })
+    } else {
+        res.json("accepted")
+    }
+    
     
 })
 
 app.post('/register', (req, res) => {
 
-    knex("users").count('email').where('email', req.body.email).then(data => {
-        if (data[0].count > 0) {
-            console.log("user exist")
-            res.json("user exist")
-        } else {
-            knex("users").insert({
-                email: req.body.email
-            }).then(data => console.log("processing.."))
-            bcrypt.hash(req.body.password, saltRounds).then(function (hash) {
-                knex("login").insert({
-                    email: req.body.email,
-                    hash: hash
+    if (app_mode === "database") {
+        knex("users").count('email').where('email', req.body.email).then(data => {
+            if (data[0].count > 0) {
+                console.log("user exist")
+                res.json("user exist")
+            } else {
+                knex("users").insert({
+                    email: req.body.email
                 }).then(data => console.log("processing.."))
-            })
-            res.json("registered");
-        }                                    
-    })                               
+                bcrypt.hash(req.body.password, saltRounds).then(function (hash) {
+                    knex("login").insert({
+                        email: req.body.email,
+                        hash: hash
+                    }).then(data => console.log("processing.."))
+                })
+                res.json("registered");
+            }
+        })
+    } else {
+        res.json("registered");
+    }
+                                   
 })
 app.post('/predict', (req, res) => {
     IMAGE_URL = req.body.img_url
