@@ -4,16 +4,16 @@ const cors = require('cors');
 
 const app = express();
 
-//database
+//database - you can use PGadmin to connect to database
 let app_mode = "database";
 const knex = require('knex')({
     client: 'pg',
     connection: {
         host: '127.0.0.1',
         port: 5432,
-        user: 'user',
-        password: 'password',
-        database: 'database'
+        user: 'postgres',
+        password: '12345678',
+        database: 'postgres'
     }
 });
 
